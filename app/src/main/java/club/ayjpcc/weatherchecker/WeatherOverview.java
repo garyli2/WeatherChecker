@@ -107,7 +107,8 @@ public class WeatherOverview extends AppCompatActivity {
                 public void run() {
                     try {
                         final Bitmap bitmap = Picasso.get().load("https://openweathermap.org/img/w/"+info.getIconID()+".png").get();
-                        runOnUiThread(new Runnable() { // another one! because let ui thread modify view..
+                        // modify ui for weather icon
+                        runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 icon.setImageBitmap(bitmap);
